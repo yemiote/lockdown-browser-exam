@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.splash-container {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.splash-panel{
+    width:780px;
+    height:520px;
+
+    background:linear-gradient(to bottom,#0d47d7,#032b96);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:6px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.splash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.logo{
+    width:120px;
+    height:auto;
+}
+
+h1 {
+  color: white;
+  font-size: 44px;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.loading-text {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 5px;
+}
+
+.wait-text {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.loader {
+  width: 42px;
+  height: 42px;
+  border: 6px solid rgba(255,255,255,.3);
+  border-top: 6px solid white;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
