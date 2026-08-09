@@ -16,7 +16,7 @@ body,
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #222222;
 }
@@ -27,6 +27,7 @@ body {
 ========================================================= */
 
 .exam-page {
+    position: relative;
   width: 100%;
   min-height: 100vh;
 
@@ -43,15 +44,15 @@ body {
 .exam-header {
   width: 100%;
 
-  padding: 28px 20px 22px;
+  padding: 16px 24px 12px;
 
   box-sizing: border-box;
 
-  text-align: center;
+  text-align: left;
 
   background: #ffffff;
 
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .exam-header h1 {
@@ -61,19 +62,23 @@ body {
 
   color: #222222;
 
-  font-size: 28px;
-  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .exam-header span {
   display: inline;
 
-  margin-left: 5px;
+  margin-left: 4px;
 
   color: #222222;
 
-  font-size: 28px;
-  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 
@@ -101,23 +106,16 @@ body {
 ========================================================= */
 
 .question-nav {
-  width: 210px;
-  min-width: 210px;
+  width: 185px;
+  min-width: 185px;
 
-  padding: 22px 16px 35px;
+  padding: 18px 14px 30px;
 
   box-sizing: border-box;
 
   background: #ffffff;
 
   border-right: 1px solid #dddddd;
-
-  /*
-     IMPORTANT:
-     No fixed height.
-     No sticky positioning.
-     No internal scrollbar.
-  */
 
   position: static;
 
@@ -127,14 +125,14 @@ body {
 }
 
 .nav-title {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 
-  text-align: center;
+  text-align: left;
 
   color: #333333;
 
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 
@@ -147,7 +145,7 @@ body {
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 8px;
+  gap: 7px;
 }
 
 
@@ -157,9 +155,9 @@ body {
 
 .question-number {
   width: 100%;
-  height: 58px;
+  height: 54px;
 
-  padding: 7px 4px;
+  padding: 5px 3px;
 
   box-sizing: border-box;
 
@@ -170,34 +168,59 @@ body {
 
   background: #ffffff;
 
-  border: 1px solid #d6d6d6;
-  border-radius: 4px;
+  border: 1px solid #d7d7d7;
+  border-radius: 3px;
 
-  color: #5f7887;
+  color: #587382;
 
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
+
   line-height: 1.1;
 
   cursor: pointer;
 }
 
 .question-number:hover {
-  background: #f7f7f7;
+  background: #f5f8fa;
 }
 
 
 /* =========================================================
-   ANSWER STATUS
+   ANSWERED QUESTION
 ========================================================= */
 
 .question-number.answered {
   background: #ffffff;
 
-  border-color: #d6d6d6;
+  border-color: #d7d7d7;
 
-  color: #5f7887;
+  color: #587382;
+}
+
+
+/* =========================================================
+   QUESTION STATUS SYMBOLS
+========================================================= */
+
+.question-number .status,
+.question-number .check,
+.question-number .dash {
+  font-size: 13px;
+
+  line-height: 1;
+
+  margin-top: 4px;
+}
+
+.question-number .check {
+  color: #555555;
+}
+
+.question-number .dash {
+  color: #777777;
 }
 
 
@@ -212,11 +235,11 @@ body {
 
   width: 100%;
 
-  padding: 42px 70px 100px;
+  padding: 28px 55px 95px;
 
   box-sizing: border-box;
 
-  max-width: 1150px;
+  max-width: 1050px;
 
   height: auto;
 
@@ -233,12 +256,13 @@ body {
 .question-card {
   width: 100%;
 
-  padding-bottom: 25px;
-  margin-bottom: 25px;
+  padding-bottom: 15px;
+
+  margin-bottom: 15px;
 
   border-bottom: 1px solid #eeeeee;
 
-  scroll-margin-top: 25px;
+  scroll-margin-top: 20px;
 }
 
 
@@ -247,15 +271,19 @@ body {
 ========================================================= */
 
 .question-title {
-  margin: 0 0 28px;
+  margin: 0 0 14px;
 
   text-align: left;
 
   color: #222222;
 
-  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 
-  font-weight: 600;
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
 }
 
 
@@ -266,13 +294,17 @@ body {
 .question-text {
   max-width: 900px;
 
-  margin: 0 0 30px;
+  margin: 0 0 18px;
 
-  color: #333333;
+  color: #222222;
 
-  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
 
-  line-height: 1.7;
+  font-size: 15px;
+
+  font weight: 500;
+  
+  line-height: 1.5;
 
   text-align: left;
 }
@@ -289,7 +321,9 @@ body {
 }
 
 
-/* Individual option */
+/* =========================================================
+   INDIVIDUAL OPTION
+========================================================= */
 
 .option {
   display: flex;
@@ -300,68 +334,208 @@ body {
 
   box-sizing: border-box;
 
-  padding: 11px 12px;
+  padding: 7px 10px;
 
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 
-  border-radius: 3px;
+  border-radius: 2px;
 
-  color: #333333;
+  color: #222222;
 
-  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 
-  line-height: 1.55;
+  font-size: 15px;
+
+  line-height: 1.4;
 
   cursor: pointer;
 }
 
 
-/* Hover */
+/* =========================================================
+   OPTION HOVER
+========================================================= */
 
 .option:hover {
-  background: #f5f5f5;
+  background: #f7f7f7;
 }
 
 
-/* Selected option */
+/* =========================================================
+   SELECTED OPTION
+========================================================= */
 
 .option.selected {
-  background: #e8f0ff;
+  background: #eaf2fa;
 }
 
 
-/* Radio button */
+/* =========================================================
+   RADIO BUTTON
+========================================================= */
 
 .option input {
-  margin-top: 5px;
+  margin-top: 3px;
 
-  margin-right: 9px;
+  margin-right: 8px;
 
   flex-shrink: 0;
 }
 
 
 /* =========================================================
-   SMALLER SCREENS
+   QUIZ INFORMATION
+========================================================= */
+
+.quiz-information {
+  margin-top: 20px;
+
+  color: #555555;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SAVED INDICATOR
+========================================================= */
+
+.saved-indicator {
+  color: #777777;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   LISTEN CONTROL
+========================================================= */
+
+.listen-control {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 12px;
+
+  padding: 4px 7px;
+
+  background: #ffffff;
+
+  border: 1px solid #d5d5d5;
+
+  border-radius: 2px;
+
+  color: #333333;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+}
+
+.listen-control button {
+  border: 0;
+
+  background: transparent;
+
+  padding: 0;
+
+  font: inherit;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   BOTTOM STATUS BAR
+========================================================= */
+
+.exam-status-bar {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  height: 31px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-top: 1px solid #bdbdbd;
+
+  color: #333333;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 31px;
+}
+
+.exam-status-bar .status-label {
+  font-weight: 700;
+}
+
+.exam-status-bar .status-connected {
+  color: #4c8b58;
+
+  font-weight: 700;
+}
+
+.exam-status-bar .status-item {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE
 ========================================================= */
 
 @media (max-width: 900px) {
 
+  .exam-header {
+    padding: 14px 18px 11px;
+  }
+
   .exam-header h1,
   .exam-header span {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .question-nav {
-    width: 180px;
-    min-width: 180px;
+    width: 170px;
+    min-width: 170px;
 
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 11px;
+    padding-right: 11px;
   }
 
   .questions-container {
-    padding: 35px 35px 80px;
+    padding: 25px 32px 85px;
   }
 
   .question-text,
@@ -374,19 +548,19 @@ body {
 @media (max-width: 650px) {
 
   .exam-header {
-    padding: 22px 15px 18px;
+    padding: 12px 12px 10px;
   }
 
   .exam-header h1,
   .exam-header span {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .question-nav {
     width: 145px;
     min-width: 145px;
 
-    padding: 16px 9px 25px;
+    padding: 14px 8px 25px;
   }
 
   .question-numbers {
@@ -394,26 +568,46 @@ body {
   }
 
   .question-number {
-    height: 52px;
+    height: 50px;
 
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .questions-container {
-    padding: 25px 18px 60px;
+    padding: 20px 16px 75px;
   }
 
   .question-title {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .question-text {
-    font-size: 16px;
+    font-size: 14px;
 
-    line-height: 1.6;
+    line-height: 1.45;
   }
 
   .option {
-    font-size: 15px;
+    font-size: 14px;
   }
+
+  .exam-status-bar {
+    gap: 8px;
+
+    padding: 0 7px;
+
+    font-size: 10px;
+  }
+}
+
+.exam-timer {
+  position: absolute;
+
+  top: 18px;
+  right: 25px;
+
+  font-size: 14px;
+  color: #333333;
+
+  white-space: nowrap;
 }

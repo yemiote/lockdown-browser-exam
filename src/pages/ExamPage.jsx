@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/ExamPage.css";
 
 const questions = [
@@ -1201,10 +1201,32 @@ const questions = [
       "Very difficult",
     ],
   },
-];
+]
+
 
 function ExamPage() {
   const [answers, setAnswers] = useState({});
+  const [elapsedSeconds, setElapsedSeconds] = useState(270 * 60);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setElapsedSeconds((prev) => Math.max(prev - 1, 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+
+    return [
+      hours.toString().padStart(2, "0"),
+      minutes.toString().padStart(2, "0"),
+      secs.toString().padStart(2, "0"),
+    ].join(":");
+  };
 
   const handleAnswerChange = (questionId, optionIndex) => {
     setAnswers((prev) => ({
@@ -1227,25 +1249,25 @@ function ExamPage() {
   return (
     <div className="exam-page">
 
-      {/* =========================
-          EXAM HEADER
-      ========================= */}
+      {/* SESSION TIMER */}
+
+      <div className="exam-timer">
+        Session Duration: {formatTime(elapsedSeconds)}
+      </div>
+
+
+      {/* EXAM HEADER */}
 
       <header className="exam-header">
-        <h1>Final Exam - Requires LockDown Browser</h1>
+        <h1>Final Exam - Requires Respondus LockDown Browser</h1>
       </header>
 
 
-      {/* =========================
-          EXAM CONTENT
-      ========================= */}
+      {/* EXAM CONTENT */}
 
       <div className="exam-layout">
 
-
-        {/* =========================
-            LEFT QUESTION NAVIGATION
-        ========================= */}
+        {/* LEFT QUESTION NAVIGATION */}
 
         <aside className="question-nav">
 
@@ -1288,9 +1310,7 @@ function ExamPage() {
         </aside>
 
 
-        {/* =========================
-            ALL QUESTIONS
-        ========================= */}
+        {/* ALL QUESTIONS */}
 
         <main className="questions-container">
 
@@ -1358,6 +1378,15 @@ function ExamPage() {
 
               </div>
 
+
+              {/* SAVED INDICATOR */}
+
+              {answers[question.id] !== undefined && (
+                <div className="saved-status">
+                  ✓ Saved
+                </div>
+              )}
+
             </section>
 
           ))}
@@ -1366,9 +1395,27 @@ function ExamPage() {
 
       </div>
 
+
+      {/* BOTTOM STATUS BAR */}
+
+      <footer className="exam-status-bar">
+
+        <div className="status-left">
+
+          <span>
+            Status: <strong>Connected</strong>
+          </span>
+
+          <span>
+            Connection: <strong>P2P</strong>
+          </span>
+
+        </div>
+
+      </footer>
+
     </div>
   );
 }
 
 export default ExamPage;
-
