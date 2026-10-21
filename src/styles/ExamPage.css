@@ -89,6 +89,8 @@ body {
 .exam-layout {
   display: flex;
 
+  flex-direction: row-reverse;
+
   align-items: flex-start;
 
   width: 100%;
@@ -115,7 +117,7 @@ body {
 
   background: #ffffff;
 
-  border-right: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
 
   position: static;
 
