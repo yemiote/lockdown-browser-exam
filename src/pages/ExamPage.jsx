@@ -173,7 +173,7 @@ function ExamPage() {
       {/* EXAM HEADER */}
 
       <header className="exam-header">
-        <h1>ccc Autoimmunity - Requires Respondus LockDown <Browser></Browser></h1>
+        <h1>ccc Autoimmunity - Requires Respondus LockDown Browser</h1>
       </header>
 
 
